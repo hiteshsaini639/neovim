@@ -1,0 +1,8 @@
+tags
+test.sh
+.luarc.json
+.stylua.toml
+nvim
+
+spell/
+lazy-lock.json
