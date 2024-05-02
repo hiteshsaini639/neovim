@@ -21,23 +21,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = {
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-	},
-	{
-    'nvim-telescope/telescope.nvim', tag = '0.1.6',
-      dependencies = { 'nvim-lua/plenary.nvim' }
-	},
-	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
-}
-
-local opts = {}
-
-require("lazy").setup(plugins, opts)
+require("lazy").setup("plugins")
 
 local configs = require("nvim-treesitter.configs")
 configs.setup({
@@ -55,3 +39,5 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 require("tokyonight").setup({style = "night"})
 vim.cmd.colorscheme "tokyonight"
+
+vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>', {})
